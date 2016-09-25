@@ -478,7 +478,7 @@ RCT_ENUM_CONVERTER(CKCameraZoomMode, (@{
                     rectToCrop = [CKCamera cropRectForSize:rectToCrop overlayObject:self.cameraOverlayView.overlayObject];
                 }
                 
-                CGImageRef imageRef = CGImageCreateWithImageInRect(capturedImage.CGImage, rectToCrop);
+                CGImageRef imageRef = capturedImage.CGImage
                 capturedImage = [UIImage imageWithCGImage:imageRef scale:capturedImage.scale orientation:UIImageOrientationUp];
                 imageData = UIImageJPEGRepresentation(capturedImage, capturedImage.scale); // TODO: check JPEG representation
                 
